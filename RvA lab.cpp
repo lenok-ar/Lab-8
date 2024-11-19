@@ -6,67 +6,67 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "RU");
 
-    string s; 
+    string r; 
     cout << "Введите римское число: ";
-    cin >> s;
+    cin >> r;
+    int a = 0;
+    
+    for (int i = 0; i < r.length(); i++) {
+        if (i < r.length() - 1) {
+            if (r[i] == 'I' && r[i + 1] == 'V') {
+                a += 4;
+                i++;
+                continue;
+            }
+            else if (r[i] == 'I' && r[i + 1] == 'X') {
+                a += 9;
+                i++;
+                continue;
+            }
+            else if (r[i] == 'X' && r[i + 1] == 'L') {
+                a += 40;
+                i++;
+                continue;
+            }
+            else if (r[i] == 'X' && r[i + 1] == 'C') {
+                a += 90;
+                i++;
+                continue;
+            }
+            else if (r[i] == 'C' && r[i + 1] == 'D') {
+                a += 400;
+                i++;
+                continue;
+            }
+            else if (r[i] == 'C' && r[i + 1] == 'M') {
+                a += 900;
+                i++;
+                continue;
+            }
+        }
 
-    int n = 0;
-    for (int i = 0; i < s.length(); i++) {
-        if (i < s.length() - 1) {
-            if (s[i] == 'I' && s[i + 1] == 'V') {
-                n += 4;
-                i++;
-                continue;
-            }
-            else if (s[i] == 'I' && s[i + 1] == 'X') {
-                n += 9;
-                i++;
-                continue;
-            }
-            else if (s[i] == 'X' && s[i + 1] == 'L') {
-                n += 40;
-                i++;
-                continue;
-            }
-            else if (s[i] == 'X' && s[i + 1] == 'C') {
-                n += 90;
-                i++;
-                continue;
-            }
-            else if (s[i] == 'C' && s[i + 1] == 'D') {
-                n += 400;
-                i++;
-                continue;
-            }
-            else if (s[i] == 'C' && s[i + 1] == 'M') {
-                n += 900;
-                i++;
-                continue;
-            }
+        if (r[i] == 'M') {
+            a += 1000;
         }
-
-        if (s[i] == 'M') {
-            n += 1000;
+        else if (r[i] == 'D') {
+            a += 500;
         }
-        else if (s[i] == 'D') {
-            n += 500;
+        else if (r[i] == 'C') {
+            a += 100;
         }
-        else if (s[i] == 'C') {
-            n += 100;
+        else if (r[i] == 'L') {
+            a += 50;
         }
-        else if (s[i] == 'L') {
-            n += 50;
+        else if (r[i] == 'X') {
+            a += 10;
         }
-        else if (s[i] == 'X') {
-            n += 10;
+        else if (r[i] == 'V') {
+            a += 5;
         }
-        else if (s[i] == 'V') {
-            n += 5;
-        }
-        else if (s[i] == 'I') {
-            n += 1;
+        else if (r[i] == 'I') {
+            a += 1;
         }
     }
-    cout << "Конвертация римских чисел в арабские = " << n << endl;
+    cout << "Конвертация римских чисел в арабские = " << a << endl;
     return 0;
 }

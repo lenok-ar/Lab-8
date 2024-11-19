@@ -1,4 +1,9 @@
-﻿#include <iostream>
+/***************************
+ * Автор: Арестова Е.Е.    *
+ * Дата: 18.11.2024         *
+ ***************************/
+
+#include <iostream>
 #include <locale>
 
 using namespace std;
